@@ -1,10 +1,13 @@
 import { createStore, applyMiddleware } from 'redux'
 import * as user from '../user.json';
 import reducer from './reducers';
-import {saveToLocalStorageMiddleware,readFromLocalStorageMiddleware} from './middleware';
+import {saveToLocalStorageMiddleware,loggerMiddleware,fetchApis} from './middleware';
 
-const initialState = { person: user , lastVisit : '2018-09-23', savedName :''};
-const middleware = applyMiddleware(saveToLocalStorageMiddleware,readFromLocalStorageMiddleware)
+const lastVisit = localStorage["lastVisit"];
+const savedName = localStorage["name"];
+
+const initialState = { person: user , lastVisit : lastVisit, savedName :savedName};
+const middleware = applyMiddleware(saveToLocalStorageMiddleware,loggerMiddleware,fetchApis);
 
 export const store = createStore(reducer, initialState, middleware);
 

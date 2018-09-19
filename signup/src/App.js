@@ -9,6 +9,7 @@ class App extends Component {
     super();
     this.state = store.getState();
     store.subscribe(this.refresh);
+    
   }
   render() {
     return (

@@ -19,4 +19,11 @@ export const actions ={
     setEmail : value => store.dispatch({type : actionTypes.SET_EMAIL,payload:{email:value}}),
 
     setCell : value => store.dispatch({type : actionTypes.SET_CELL,payload:{cell:value}}),
+
+    setPerson : value => store.dispatch({type : actionTypes.SET_PERSON, payload:{person:value}}),
+    setName : value => store.dispatch({type : actionTypes.SET_NAME, payload:{name:value}}),
+    setLocation : value => store.dispatch({type : actionTypes.SET_LOCATION, payload:{location:value}}),
+
+    fetchPerson : ()=> store.dispatch({type : actionTypes.FETCH_PERSON}),
+    fetchCityAndState : value=> store.dispatch({type : actionTypes.FETCH_CITY_STATE, payload :{id:value}})
 }

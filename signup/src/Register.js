@@ -6,6 +6,7 @@ export class Register extends Component {
     return (
       <div>
         <h1>Maintain Account</h1>
+        <button onClick={this.getPerson}>Get a person</button>
         <section className="row card-panel teal lighten-5">
           <h4 className="card-title">Current information</h4>
           <div>
@@ -84,9 +85,15 @@ export class Register extends Component {
     );
   }
 
-  changePerson = (e) => {
+  getPerson = () =>{
+    actions.fetchPerson();
+  }
 
+
+
+  changePerson = (e) => {
     const value = e.target.value;
+
     switch (e.target.id) {
       case "title":
         actions.setTitle(value);
@@ -115,9 +122,14 @@ export class Register extends Component {
       case "cell":
         actions.setCell(value);
         break;
+      default:
+      console.log('Nothing to do...')
+        break;
     }
   }
 
   fetchCityAndState(e) {
+    const id = e.target.value;
+    actions.fetchCityAndState(id)
   }
 }

@@ -4,6 +4,8 @@ import { actionTypes } from "./action-types"
 const personReducer = (state, action) => {
     if (!action) return state;
     switch (action.type) {
+        case actionTypes.SET_PERSON:
+            return { ...action.payload.person };
         case actionTypes.SET_EMAIL:
             return { ...state, email: action.payload.email };
         case actionTypes.SET_CELL:
@@ -17,6 +19,8 @@ const personReducer = (state, action) => {
 const nameReducer = (state, action) => {
     if (!action) return state;
     switch (action.type) {
+        case actionTypes.SET_NAME:
+            return { ...action.payload.name };
         case actionTypes.SET_TITLE:
             return { ...state, title: action.payload.title };
         case actionTypes.SET_FIRST:
@@ -31,6 +35,8 @@ const nameReducer = (state, action) => {
 const locationReducer = (state, action) => {
     if (!action) return state;
     switch (action.type) {
+        case actionTypes.SET_LOCATION:
+            return { ...action.payload.location };
         case actionTypes.SET_STREET:
             return { ...state, street: action.payload.street };
         case actionTypes.SET_CITY:
@@ -49,21 +55,21 @@ const mainReducer = (state, action) => {
     if (!action) return state;
     switch (action.type) {
         case 'SET_LAST_VISIT':
-            return {...state,lastVist:action.payload.lastVist}
+            return { ...state, lastVist: action.payload.lastVist }
         case 'SET_SAVED_NAME':
-            return {...state,savedName:action.payload.savedName}
+            return { ...state, savedName: action.payload.savedName }
         default:
             return state;
     }
 };
 
-const rootReducer = (state, action) => ( {
-        ...mainReducer(state, action),
-        person: {
-            ...personReducer(state.person, action),
-            name: nameReducer(state.person.name, action),
-            location: locationReducer(state.person.location, action)
-        }
-    });
+const rootReducer = (state, action) => ({
+    ...mainReducer(state, action),
+    person: {
+        ...personReducer(state.person, action),
+        name: nameReducer(state.person.name, action),
+        location: locationReducer(state.person.location, action)
+    }
+});
 
 export default rootReducer;
