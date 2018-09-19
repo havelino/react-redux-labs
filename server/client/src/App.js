@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
-import ThemeSwitcher from './theme-switcher'
+import ThemeSwitcher from './components/ThemeSwitcher'
 
 class App extends Component {
   render() {
