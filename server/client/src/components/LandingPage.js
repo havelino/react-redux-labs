@@ -1,5 +1,12 @@
 import React, { Component } from 'react';
 import ThemeSwitcher from './ThemeSwitcher'
+import FilmDetails from './FilmDetails'
+import PickSeats from './PickSeats'
+import Login from './Login'
+import Checkout from './Checkout'
+
+
+
 
 class LandingPage extends Component {
     render() {
@@ -36,73 +43,18 @@ class LandingPage extends Component {
                     <div class="container">
                         <img class="img-fluid mb-5 d-block mx-auto" src="img/profile.png" alt=""></img>
                         <h1 class="text-uppercase mb-0">Dinner a movie</h1>
-                        <h2 class="font-weight-light mb-0">What would you like to see?</h2>
+                        <h1>What would you like to see?</h1>
+                        <input type="date" id="end" name="trip"
+                            value="2018-07-29"
+                            min="2018-01-01" max="2018-12-31"></input>
                     </div>
                 </header>
                 <br></br>
-                
-                <section class="portfolio" id="portfolio">
-                    <div class="container">
-                        <h2 class="text-center text-uppercase text-secondary mb-0">Film details</h2>
-                        <br></br>
-                        <div class="row">
-                            <div class="col-md-6 col-lg-4">
-                                <h4>Return to the future</h4>
-                                <p>great movie</p>
-                            </div>
-                            <div class="col-md-6 col-lg-4">
-                                <h4>Avengers</h4>
-                                <p>great movie</p>
-                            </div>
-                            <div class="col-md-6 col-lg-4">
-                                <h4>titanic</h4>
-                                <p>great movie</p>
-                            </div>
-                            <div class="col-md-6 col-lg-4">
-                                <h4>Avatar</h4>
-                                <p>great movie</p>
-                            </div>
-                            <div class="col-md-6 col-lg-4">
-                                <h4>DeadPool</h4>
-                                <p>great movie</p>
-                            </div>
-                            <div class="col-md-6 col-lg-4">
-                                <h4>Cirendela</h4>
-                                <p>great movie</p>
-                            </div>
-                        </div>
-                    </div>
-                </section>
 
-                <section class="portfolio" id="portfolio">
-                    <div class="container">
-                        <h2 class="text-center text-uppercase text-secondary mb-0">Pick Seats</h2>
-                        <br></br>
-                        <p>Where would you like to seat?</p>
-                        <div class="row">
-                            <div class="col-md-6 col-lg-4">
-                                <h5>Seat 1</h5>
-                            </div>
-                            <div class="col-md-6 col-lg-4">
-                                <h4>Other Component</h4>
-                            </div>
-                            <div class="col-md-6 col-lg-4">
-                                <h4>Other Component</h4>
-                            </div>
-                            <div class="col-md-6 col-lg-4">
-                                <h4>Other Component</h4>
-                            </div>
-                            <div class="col-md-6 col-lg-4">
-                                <h4>Other Component</h4>
-                            </div>
-                            <div class="col-md-6 col-lg-4">
-                                <h4>Other Component</h4>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-
+                <FilmDetails></FilmDetails>
+                <PickSeats></PickSeats>
+                <Checkout></Checkout>
+                <Login></Login>
                 <footer class="footer text-center">
                     <div class="container">
                         <p>footer</p>
