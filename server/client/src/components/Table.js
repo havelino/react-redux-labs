@@ -4,10 +4,10 @@ import Seat from './Seat'
 class Table extends Component{
 
     render(){
-        console.log("tables:",this.props.tables)
+        console.log("table:",this.props.table)
+        const table = this.props.table;
         return(
             <div>
-                <h5>Table component</h5>
                 <table>
                 <thead>
                     <tr>
@@ -19,22 +19,10 @@ class Table extends Component{
                 </thead>
                 <tbody>
                     <tr>
-                        <td>{this.props.tables[0].id}</td>
-                        <td>{this.props.tables[0].theater_id}</td>
-                        <td>{this.props.tables[0].table_number}</td>
-                        <td><Seat seats = {this.props.tables[0].seats}></Seat></td>
-                    </tr>
-                    <tr>
-                        <td>{this.props.tables[1].id}</td>
-                        <td>{this.props.tables[1].theater_id}</td>
-                        <td>{this.props.tables[1].table_number}</td>
-                        <td><Seat seats = {this.props.tables[1].seats}></Seat></td>
-                    </tr>
-                    <tr>
-                        <td>{this.props.tables[2].id}</td>
-                        <td>{this.props.tables[2].theater_id}</td>
-                        <td>{this.props.tables[2].table_number}</td>
-                        <td><Seat seats = {this.props.tables[2].seats}></Seat></td>
+                        <td>{table.id}</td>
+                        <td>{table.theater_id}</td>
+                        <td>{table.table_number}</td>
+                        <td>{table.seats.map((s,i)=><Seat seat = {s} key={i}></Seat>)}</td>
                     </tr>
                 </tbody>
             </table>

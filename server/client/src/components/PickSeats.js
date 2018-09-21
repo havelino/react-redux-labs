@@ -11,7 +11,7 @@ class PickSeats extends Component {
 
         console.log(showing_id);
         console.log("history:",this.props.history)
-
+        
         return (<section className="portfolio" id="portfolio">
             <div className="container">
                 <h2 className="text-center text-uppercase text-secondary mb-0">Pick Seats</h2>
@@ -22,7 +22,7 @@ class PickSeats extends Component {
                 <p> Cinema Polanco </p>
                 <br></br>
                 <br></br>
-                <Table tables={tables}></Table>
+                {tables.map(t=><Table table={t}></Table>)}
                 <button onClick = {()=>this.props.history.push('/checkout')} > Checkout</button>
             </div>
         </section>
