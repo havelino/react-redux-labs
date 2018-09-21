@@ -1,36 +1,23 @@
 import React, { Component } from 'react';
-import {PosterStyle} from './LandingPage.css'
+import { PosterStyle } from './LandingPage.css'
+import { Link } from 'react-router-dom';
 
 
 class FilmDetails extends Component {
     render() {
-        return (<section class="portfolio" id="portfolio">
-        <div class="container">
-            <h2 class="text-center text-uppercase text-secondary mb-0">Film details</h2>
-            <br></br>
-            <div><h2>Sack Lunch</h2></div>
-            <div class="row">
-                <PosterStyle src ="./img/posters/6.jpg"></PosterStyle>
+        const p = {id:999};
+        return (<section id="portfolio">
+            <div className="container">
+                <h2>Film details</h2>
+                <br></br>
+                <div><h2>{this.props.title}</h2></div>
+                <a>{this.props.homepage}</a>
+                <br></br>
+                <PosterStyle src={this.props.poster}></PosterStyle>
+                <p>{this.props.overview}</p>
+                <Link to={'/pickseats/'+p.id}>PickSeats</Link>
             </div>
-            <div class="row">
-                <p>A comic movie about a great guy.  you cant lost this funny adventure.</p>
-            </div>
-            <div class="row">
-                <ul>
-                    Sunday 12: 00 to 14:00 hrs
-                </ul>
-                <ul>
-                    Monday 12: 00 to 14:00 hrs
-                </ul>
-                <ul>
-                    Tuesday 12: 00 to 14:00 hrs
-                </ul>
-                <ul>
-                    Wensday 12: 00 to 14:00 hrs
-                </ul>
-            </div>
-        </div>
-    </section>);
+        </section>);
     }
 }
 

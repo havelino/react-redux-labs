@@ -11,23 +11,22 @@ class Login extends Component {
         return (
             <div>
                 <h1 style = {inputStyle} >Log in</h1>
-                <div class="mdl-grid">
-                    <div class="mdl-cell mdl-cell--3-col"></div>
-                    <div class="mdl-cell mdl-cell--3-col">
-                        <label for="sample2">Email</label>
-                        <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample2"></input>
-                        <span class="mdl-textfield__error">Input is not a number!</span>
+                <div className="mdl-grid">
+                    <div className="mdl-cell mdl-cell--3-col">
+                        <label htmlFor="sample2">Email</label>
+                        <input className="mdl-textfield__input" type="text"  id="email"></input>
+                        <span className="mdl-textfield__error">Input is not a number!</span>
                     </div>
-                    <div class="mdl-cell mdl-cell--3-col">
-                        <label  for="sample2">Password</label>
-                        <input class="mdl-textfield__input" type="password" pattern="-?[0-9]*(\.[0-9]+)?" id="sample2"></input>
+                    <div className="mdl-cell mdl-cell--3-col">
+                        <label  htmlFor="sample2">Password</label>
+                        <input className="mdl-textfield__input" type="password" id="password"></input>
 
-                        <span class="mdl-textfield__error">Input is not a number!</span>
+                        <span className="mdl-textfield__error">Input is not a number!</span>
                     </div>
-                    <div class="mdl-cell mdl-cell--3-col"></div>
+                    <div className="mdl-cell mdl-cell--3-col"></div>
                 </div>
                 <br></br>
-                <button type="button" value="Login">Login</button>
+                <button type="button" onClick = {()=>this.props.history.push('/checkout')} > Login</button>
             </div>
         );
     }

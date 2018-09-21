@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
+import Redirect from 'react-router-dom/Redirect';
 
 class Checkout extends Component {
     render() {
+        const authenticated = this.props.authenticated;
+        console.log("authenticated : "+ authenticated);
         return(
         <div>
             <h1>Checkout"</h1>
@@ -35,6 +38,7 @@ class Checkout extends Component {
                     </tr>
                 </tbody>
             </table>
+            {authenticated!=true&&<Redirect to="/login" ></Redirect>}
         </div>
         );
     }
